@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+
+<title>Trip mileage calculator</title>
+</head>
+<body>
+<script type="text/javascript">
+    function myFunction() {
+		var mileage1 = prompt("Enter the beginning odometer: ");
+		var mileage2 = prompt("Enter the ending odometer: ");
+		var miles = mileage2 - mileage1;
+		var gasUsed = prompt("Enter the gallons used: ");
+		var gasCost = prompt("Enter price of gas per gallon: ");
+		var gasAmount = miles / gasUsed;
+		//var gasTotal = gasCost.toFixed(2);
+		document.write("Your trip mileage is: ", miles);
+		document.write("<br>");
+		document.write("Your mpg is: ", gasAmount);
+		document.write("<br>");
+		document.write("Your trip total cost is: $", gasAmount * gasCost);
+	}
+
+</script>
+<form action="#">
+<input type="button" value="odometer" onclick="myFunction();" />
+</form>
+</body>
+</html>
