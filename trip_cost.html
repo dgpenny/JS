@@ -1,10 +1,13 @@
 <!DOCTYPE HTML>
 <html lang="en-us">
 <head>
-
 <title>Trip cost calculator</title>
+<link rel="stylesheet" type="text/css" href="GitHub/style.css">
 </head>
 <body>
+<br><br>
+<table class="main">
+<h1><b>Trip cost calculator using JavaScript</b></h1>
 <br><br>
 <script type="text/javascript">
     function myFunction() {
@@ -16,18 +19,24 @@
 	    var gasCost = prompt("Enter price of gas per gallon: ");
 		var gasAmount = miles / gasUsed;
 		var totalCost = gasAmount * gasCost;
-		document.write("Your trip mileage is: ", miles, "<br>");
-		document.write("Your mpg is: ", (Math.round(gasAmount*100)/100), "<br>");
-		document.write("Your trip total cost is: $", totalCost.toFixed(2), "<br>");
-		document.write("<br>");
-		document.write("<br>");
-		document.write("<input type='button' value='Reset' onClick='window.location.reload();'> ");
+		
+ 
+        var win = window.open("", "", "width=300, height=300");
+        win.document.write('<html><head><title>Results</title><link rel="stylesheet" type="text/css" href="GitHub/style.css"></head><body>');
+		win.document.write("Your trip mileage is: ", miles, "<br>");
+		win.document.write("Your mpg is: ", (Math.round(gasAmount*100)/100), "<br>");
+		win.document.write("Your trip total cost is: $", totalCost.toFixed(2), "<br>");
+		win.document.write("<br>");
+		win.document.write("<br>");
+		win.document.write("<input type='button' value='Close' onClick='window.close();'> ");
+		win.document.write('</body></html>');
+		
 
 	}
 
 </script>
 <form action="#">
-<input type="button" value="odometer" onclick="myFunction();" />
+<input type="button" value="Begin" onclick="myFunction();" />
 </form>
 
 </body>
